@@ -1,3 +1,4 @@
+import React from 'react';
 import { products } from '../constants';
 import PopularProductCard from '../components/PopularProductCard';
 
@@ -28,4 +29,4 @@ const PopularProducts = () => {
   )
 }
 
-export default PopularProducts
+export default PopularProducts;
