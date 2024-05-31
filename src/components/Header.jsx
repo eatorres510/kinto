@@ -1,20 +1,19 @@
-import React from 'react'
-import { Box, Button, styled, Typography } from "@mui/material";
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Box, styled, Typography } from "@mui/material";
 //img
-import headerImg from '../assets/pexels-binyamin-mellish-186078.png'
+import headerImg from '../../src/assets/images/car.png';
+import kintoLogo from '../../src/assets/images/kinto.png'; // Import the Kinto logo
+import playStoreImg from '../../src/assets/images/playstore2.png'; // Import Play Store image
+import appStoreImg from '../../src/assets/images/appstore2.png'; // Import App Store image
 
 const Header = () => {
-
-    const CustomBox = styled(Box) (({ theme }) => ({
-        minHeight: '80vh',
+    const CustomBox = styled(Box)(({ theme }) => ({
+        minHeight: '60vh',
         display: 'flex',
         justifyContent: 'center',
-        // tamanhos
         gap: theme.spacing(2),
-        paddingTop: theme.spacing(10),
-        // cor de fundo
-        backgroundColor: 'orange',
+        paddingTop: theme.spacing(),
+        backgroundColor: '#00708d',
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
             alignItems: 'center',
@@ -22,7 +21,7 @@ const Header = () => {
         }
     }));
 
-    const BoxText = styled(Box) (({ theme }) => ({
+    const BoxText = styled(Box)(({ theme }) => ({
         flex: '1',
         paddingLeft: theme.spacing(8),
         [theme.breakpoints.down('md')]: {
@@ -33,112 +32,87 @@ const Header = () => {
         },
     }));
 
+    const storeButtonContainerStyle = {
+        width: 150, // Set the width
+        height: 50, // Set the height
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+    };
 
-  return  (
+    const storeButtonImageStyle = {
+        width: '100%',
+        height: '100%',
+        objectFit: 'contain',
+    };
+
+    return (
         <CustomBox component='header'>
-            {/*  Box text  */}
-            <BoxText 
-            component='section'
-            >
-                <Typography
-                variant='h2'
-                component= 'h1'
-                sx={{
-                    fontWeight: 700,
-                    color: '#fff',
-                }}
-                >
-                    We'll build house of your dream
-                </Typography>
+            <BoxText component='section'>
+                <img
+                    src={kintoLogo}
+                    alt="KINTO Logo"
+                    style={{
+                        height: 'auto',
+                        maxWidth: '100%',
+                        // border: '2px solid white',
+                    }}
+                />
 
                 <Typography
-                variant='p'
-                component='p'
-                sx={{
-                    py: 3,
-                    lineHeight: 1.6,
-                    color: '#fff',
-                }}
+                    variant='p'
+                    component='p'
+                    sx={{
+                        py: 3,
+                        lineHeight: 2,
+                        color: '#fff',
+                    }}
                 >
-                    We have 9000 more review and our customers
-                    trust on out property and quality products.
+                    Servicio alquier de modalidad de corto plazo de Toyota que te permite movilizarte de manera fácil y
+                    rápida pagando solo por uso del vehículo.
                 </Typography>
 
-                <Box>
-                    <Button 
-                    variant='contained'
-                    sx={{
-                        mr: 2,
-                        px: 4, 
-                        py: 1,
-                        fontSize: '0.9rem',
-                        textTransform: 'capitalize',
-                        borderRadius: 0,
-                        borderColor: '#14192d',
-                        color: '#fff',
-                        backgroundColor: '#14192d',
-                        "&&:hover": {
-                            backgroundColor: "#343a55"
-                        },
-                        "&&:focus": {
-                            backgroundColor: "#343a55"
-                        }
-                    }}
-                    >
-                        buy now
-                    </Button>
-                    <Button 
-                    component={Link} 
-                    to={'/about'}
-                    variant='outlined'
-                    sx={{
-                        px: 4, 
-                        py: 1,
-                        fontSize:'0.9rem',
-                        textTransform: 'capitalize',
-                        borderRadius: 0,
-                        color: '#fff',
-                        backgroundColor: 'transparent',
-                        borderColor: '#fff',
-                        "&&:hover": {
-                            color: '#343a55',
-                            borderColor: '#343a55',
-                        },
-                        "&&:focus": {
-                            color: '#343a55',
-                            borderColor: '#343a55',
-                        }
-                    }}
-                    >
-                        explore
-                    </Button>
+                <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
+                    <a href="https://play.google.com/store/apps/details?id=com.goodtravelsoftware.sharecar.toyotaargentina&hl=es&gl=US&pli=1" target="_blank" rel="noopener noreferrer" style={storeButtonContainerStyle}>
+                        <img
+                            src={playStoreImg}
+                            alt="Play Store"
+                            style={storeButtonImageStyle}
+                        />
+                    </a>
+                    <a href="https://apps.apple.com/cr/app/kinto-share-latam/id1436690858" target="_blank" rel="noopener noreferrer" style={storeButtonContainerStyle}>
+                        <img
+                            src={appStoreImg}
+                            alt="App Store"
+                            style={storeButtonImageStyle}
+                        />
+                    </a>
                 </Box>
             </BoxText>
 
             <Box sx={theme => ({
-                [theme.breakpoints.down('md')]:{
+                [theme.breakpoints.down('md')]: {
                     flex: '1',
                     paddingTop: '30px',
                     alignSelf: 'center',
                 },
-                [theme.breakpoints.up('md')]:{
+                [theme.breakpoints.up('md')]: {
                     flex: '2',
                     alignSelf: 'flex-end',
                 },
-            })}
-            >
+            })}>
                 <img
-                src={headerImg}
-                alt="headerImg"
-                style={{ 
-                    width: "100%", 
-                    marginBottom: -15,
-                }}
+                    src={headerImg}
+                    alt="headerImg"
+                    style={{
+                        width: "100%",
+                        marginBottom: -15,
+                    }}
                 />
             </Box>
-
         </CustomBox>
-    )
+    );
 }
 
-export default Header
+export default Header;
