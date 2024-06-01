@@ -85,10 +85,10 @@ const Footer = () => {
       <StackColumn>
         <FooterTitle text={'Redes Sociales'} />
         <Stack direction='row' spacing={2}>
-          <Link href="#" color="inherit">
+          <Link href="https://www.facebook.com/share/HbdtyevPbocWmYQw/?mibextid=qi2Omg" color="inherit">
             <FacebookIcon />
           </Link>
-          <Link href="#" color="inherit">
+          {/* <Link href="#" color="inherit">
             <TwitterIcon />
           </Link>
           <Link href="#" color="inherit">
@@ -96,8 +96,8 @@ const Footer = () => {
           </Link>
           <Link href="#" color="inherit">
             <WhatsAppIcon />
-          </Link>
-          <Link href="#" color="inherit">
+          </Link> */}
+          <Link href="https://www.instagram.com/toyotanicaragua?igsh=aTl4MzJzcHlxMHNv" color="inherit">
             <InstagramIcon />
           </Link>
         </Stack>
